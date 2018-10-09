@@ -59,26 +59,4 @@ class League
 
         return $this;
     }
-
-    public function addTeam(Team $team): self
-    {
-        if (!$this->teams->contains($team)) {
-            $this->teams[] = $team;
-            $team->setLeague($this);
-        }
-
-        return $this;
-    }
-
-    public function removeTeam(Team $team): self
-    {
-        if ($this->teams->contains($team)) {
-            $this->teams->removeElement($team);
-            if ($team->getLeague() === $this) {
-                $team->setLeague(null);
-            }
-        }
-
-        return $this;
-    }
 }

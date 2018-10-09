@@ -1,5 +1,3 @@
-
-
 ## Checklist
 * RESTful API
 * JWT authentication

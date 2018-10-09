@@ -32,12 +32,6 @@ class TeamController extends AbstractController
      */
     private $teamUpdateService;
 
-    /**
-     * TeamController constructor.
-     * @param TeamReadService $teamReadService
-     * @param TeamCreationService $teamCreationService
-     * @param TeamUpdateService $teamUpdateService
-     */
     public function __construct(
         TeamReadService $teamReadService,
         TeamCreationService $teamCreationService,
