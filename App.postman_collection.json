@@ -1,0 +1,119 @@
+{
+	"id": "51e5de1d-6db2-c588-77d4-ba9bf761b46d",
+	"name": "Football App",
+	"description": "",
+	"order": [
+		"d008f531-1a3e-75f3-27fe-19ef4bfc41ab",
+		"79690212-b3c6-0cbe-168a-082df4996069",
+		"02c95ae8-8c1f-725b-5608-f898be8133a6",
+		"904ba463-fad1-d058-5535-49748cbf15a7"
+	],
+	"folders": [],
+	"timestamp": 1538958949303,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "02c95ae8-8c1f-725b-5608-f898be8133a6",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost/league/{id}/team",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1539087629617,
+			"name": "Create a football team",
+			"description": "",
+			"collectionId": "51e5de1d-6db2-c588-77d4-ba9bf761b46d",
+			"responses": [],
+			"rawModeData": "{\n\t\"name\": \"Sensiolabs\",\n\t\"strip\": \"GreenBlackWhite\"\n}"
+		},
+		{
+			"id": "79690212-b3c6-0cbe-168a-082df4996069",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost/league/{id}",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1539038502663,
+			"name": "Delete a football league",
+			"description": "",
+			"collectionId": "51e5de1d-6db2-c588-77d4-ba9bf761b46d",
+			"responses": []
+		},
+		{
+			"id": "904ba463-fad1-d058-5535-49748cbf15a7",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost/league/{leagueId}/team/{teamId}",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PATCH",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1539087652317,
+			"name": "Replace all attributes of a football team",
+			"description": "",
+			"collectionId": "51e5de1d-6db2-c588-77d4-ba9bf761b46d",
+			"responses": [],
+			"rawModeData": "{\n\t\"id\": \"b999cc25-cd3b-4ada-b67e-3fea1b44ea14\",\n\t\"name\": \"F YESSSSSSSSSS\",\n\t\"strip\": \"H003021312323\"\n}"
+		},
+		{
+			"id": "d008f531-1a3e-75f3-27fe-19ef4bfc41ab",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost/league/{id}/team",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1539087670626,
+			"name": "Get a list of football teams in given league",
+			"description": "",
+			"collectionId": "51e5de1d-6db2-c588-77d4-ba9bf761b46d",
+			"responses": []
+		}
+	]
+}
