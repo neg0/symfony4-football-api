@@ -2,14 +2,13 @@
 
 namespace App\Entity;
 
-use App\Model\Arrayable;
 use Doctrine\ORM\Mapping as ORM;
 use Ramsey\Uuid\UuidInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TeamRepository")
  */
-class Team implements Arrayable
+class Team
 {
     public const FIELD_ID = 'id';
     public const FIELD_NAME = 'name';
@@ -87,15 +86,5 @@ class Team implements Arrayable
         $this->league = $league;
 
         return $this;
-    }
-
-    public function toArray(): array
-    {
-        return [
-            self::FIELD_ID => $this->id,
-            self::FIELD_NAME => $this->name,
-            self::FIELD_STRIP => $this->strip,
-            self::FIELD_LEAGUE => $this->league->getName() ?: null,
-        ];
     }
 }

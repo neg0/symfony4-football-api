@@ -9,10 +9,13 @@ framework:
     session:
         handler_id: ~
 
-    #esi: true
+    esi: true
     #fragments: true
     php_errors:
         log: true
+
+    serializer:
+        name_converter: 'serializer.name_converter.camel_case_to_snake_case'
 
     cache:
         # Put the unique name of your app here: the prefix seed

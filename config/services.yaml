@@ -29,12 +29,18 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
-    App\Service\LeagueRemovalService:
-        autowire: true
-        public: true
 
-    App\Service\TeamListService:
-        autowire: true
-        public: true
+    #    get_set_method_normalizer:
+    #        class: Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer
+    #        public: false
+    #        tags: [serializer.normalizer]
 
+    uuid_normalizer:
+        class: GBProd\UuidNormalizer\UuidNormalizer
+        tags:
+            - { name: serializer.normalizer }
 
+    uuid_denormalizer:
+        class: GBProd\UuidNormalizer\UuidDenormalizer
+        tags:
+            - { name: serializer.normalizer }

@@ -2,6 +2,7 @@
 
 namespace App\Service\Team;
 
+use App\Entity\Team;
 use App\Repository\LeagueRepository;
 use App\Repository\TeamRepository;
 
@@ -19,6 +20,12 @@ class TeamReadService
 
     public function listByLeagueId(string $id): array
     {
-        return $this->teamRepository->findByLeagueId($id);
+        $teams = $this->teamRepository->findByLeagueId($id);
+        /** @var Team $team */
+        foreach ($teams as $team) {
+            $team->setLeague(null);
+        }
+
+        return $teams;
     }
 }

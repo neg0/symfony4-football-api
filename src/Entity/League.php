@@ -31,6 +31,11 @@ class League
      */
     private $teams;
 
+    public function __construct()
+    {
+        $this->teams = new ArrayCollection();
+    }
+
     public function getId()
     {
         return $this->id;
@@ -48,7 +53,7 @@ class League
         return $this;
     }
 
-    public function getTeams(): ?ArrayCollection
+    public function getTeams()
     {
         return $this->teams;
     }

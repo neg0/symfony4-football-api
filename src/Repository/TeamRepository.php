@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\League;
 use App\Entity\Team;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\Id\AssignedGenerator;
@@ -54,23 +55,11 @@ class TeamRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * @return League[]
+     */
     public function findByLeagueId(string $id): array
     {
-        $qb = $this->createQueryBuilder('Team');
-        $qb->select(
-            'Team.id AS id, 
-            Team.name AS team, 
-            Team.strip AS strip, 
-            League.name AS league'
-        );
-
-        return $qb
-            ->join('Team.league', 'League')
-            ->where($qb->expr()->eq('Team.league', ':leagueId'))
-            ->groupBy('Team.id')
-            ->setParameter('leagueId', $id)
-            ->orderBy('Team.name', 'ASC')
-            ->getQuery()
-            ->getResult();
+        return $this->findBy(['league' => $id]);
     }
 }
