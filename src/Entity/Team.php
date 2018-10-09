@@ -11,6 +11,11 @@ use Ramsey\Uuid\UuidInterface;
  */
 class Team implements Arrayable
 {
+    public const FIELD_ID = 'id';
+    public const FIELD_NAME = 'name';
+    public const FIELD_STRIP = 'strip';
+    public const FIELD_LEAGUE = 'league';
+
     /**
      * @var UuidInterface
      *
@@ -87,10 +92,10 @@ class Team implements Arrayable
     public function toArray(): array
     {
         return [
-            'id' => $this->id,
-            'name' => $this->name,
-            'strip' => $this->league,
-            'league' => $this->league,
+            self::FIELD_ID => $this->id,
+            self::FIELD_NAME => $this->name,
+            self::FIELD_STRIP => $this->strip,
+            self::FIELD_LEAGUE => $this->league,
         ];
     }
 }

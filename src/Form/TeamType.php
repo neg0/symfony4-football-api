@@ -14,10 +14,10 @@ class TeamType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('id')
-            ->add('name', TextType::class, [ 'constraints' => [ new NotBlank() ] ])
-            ->add('strip', TextType::class)
-            ->add('league', TextType::class)
+            ->add(Team::FIELD_ID)
+            ->add(Team::FIELD_NAME, TextType::class, [ 'constraints' => [ new NotBlank() ] ])
+            ->add(Team::FIELD_STRIP, TextType::class)
+            ->add(Team::FIELD_LEAGUE, TextType::class)
         ;
     }
 

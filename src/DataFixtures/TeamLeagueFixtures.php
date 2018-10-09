@@ -82,6 +82,7 @@ class TeamLeagueFixtures extends Fixture
             $team->setName($teamName);
             $team->setLeague($league);
             $team->setStrip(\uniqid());
+
             $manager->persist($team);
         }
 

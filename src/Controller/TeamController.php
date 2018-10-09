@@ -42,7 +42,6 @@ class TeamController extends AbstractController
         $this->teamUpdateService = $teamUpdateService;
     }
 
-
     /**
      * @Route("/league/{leagueId}/team", name="team_create", methods={"PUT"})
      */

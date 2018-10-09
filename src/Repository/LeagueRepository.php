@@ -21,16 +21,6 @@ class LeagueRepository extends ServiceEntityRepository
         $this->logger = $logger;
     }
 
-    public function findOneById(string $id): ?League
-    {
-        $league = $this->find($id);
-        if ($league instanceof League) {
-            return $league;
-        }
-
-        return null;
-    }
-
     public function removeById(string $id): bool
     {
         try {
@@ -44,6 +34,4 @@ class LeagueRepository extends ServiceEntityRepository
             return false;
         }
     }
-
-
 }
