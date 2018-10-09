@@ -95,7 +95,7 @@ class Team implements Arrayable
             self::FIELD_ID => $this->id,
             self::FIELD_NAME => $this->name,
             self::FIELD_STRIP => $this->strip,
-            self::FIELD_LEAGUE => $this->league,
+            self::FIELD_LEAGUE => $this->league->getName() ?: null,
         ];
     }
 }

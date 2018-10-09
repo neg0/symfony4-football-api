@@ -19,7 +19,7 @@ class TeamLeagueFixtures extends Fixture
         "Chelsea",
         "Arsenal",
         "Burnley",
-        "Everton	",
+        "Everton",
         "Leicester City",
         "Newcastle United",
         "Crystal Palace",
