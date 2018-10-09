@@ -1,0 +1,18 @@
+App\Entity\Team:
+    type: entity
+    table: team
+    id:
+        id:
+            type: integer
+            nullable: false
+            options: { unsigned: true }
+            id: true
+            generator: { strategy: IDENTITY }
+        name:
+            type: string
+            nullable: false
+            length: 255
+        strip:
+            type: id
+            nullable: true
+            length: 128
