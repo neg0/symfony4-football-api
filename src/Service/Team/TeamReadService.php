@@ -5,7 +5,7 @@ namespace App\Service\Team;
 use App\Repository\LeagueRepository;
 use App\Repository\TeamRepository;
 
-class TeamListService
+class TeamReadService
 {
     /**
      * @var LeagueRepository

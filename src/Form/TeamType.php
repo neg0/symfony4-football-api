@@ -9,7 +9,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
-class TeamCreateType extends AbstractType
+class TeamType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -17,6 +17,7 @@ class TeamCreateType extends AbstractType
             ->add('id')
             ->add('name', TextType::class, [ 'constraints' => [ new NotBlank() ] ])
             ->add('strip', TextType::class)
+            ->add('league', TextType::class)
         ;
     }
 
