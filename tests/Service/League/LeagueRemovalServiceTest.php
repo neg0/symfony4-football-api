@@ -6,11 +6,10 @@ use App\Repository\LeagueRepository;
 use App\Service\League\LeagueRemovalService;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use Ramsey\Uuid\Uuid;
 
 class LeagueRemovalServiceTest extends TestCase
 {
-    private const MOCK_LEAGUE_ID = 1;
-
     /**
      * @var LeagueRemovalService
      */
@@ -40,18 +39,28 @@ class LeagueRemovalServiceTest extends TestCase
 
     public function testServiceShouldRemoveEntityById(): void
     {
+        $leagueId = $this->getUuid();
         $this->leagueRepository
             ->expects($this->once())
             ->method('removeById')
-            ->with(self::MOCK_LEAGUE_ID)
+            ->with($leagueId)
             ->willReturn(true);
 
-        $removed = $this->sut->removeById(self::MOCK_LEAGUE_ID);
+        $removed = $this->sut->removeById($leagueId);
         $this->assertTrue($removed);
     }
 
     private function getLeagueRepository(): MockObject
     {
         return $this->createMock(LeagueRepository::class);
+    }
+
+    private function getUuid(): string
+    {
+        try {
+            return Uuid::uuid4();
+        } catch (\Throwable $exception) {
+            return uniqid();
+        }
     }
 }
